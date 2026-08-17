@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1a4b8c">
+<title>Para La Mejor Novia 💙</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,Arial,sans-serif;overflow:hidden}
+body{background:#0a1f3a;color:#fff}
+
+/* ---------- Fondo con la foto 💙 ---------- */
+.bg-image{
+  position:absolute;inset:0;
+  background:url("assets/fondo-manos.jpg") center/cover no-repeat;
+  filter:blur(6px) brightness(0.3);
+  transform:scale(1.15);
+  z-index:0
+}
+
+/* ---------- Pantallas ---------- */
+.screen{
+  position:fixed;inset:0;z-index:10;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:32px 24px;
+  background:linear-gradient(135deg,rgba(10,31,58,0.85),rgba(26,75,140,0.75));
+  transition:opacity 0.7s ease,transform 0.7s ease;
+  opacity:0;pointer-events:none;transform:translateY(15px)
+}
+.screen.active{opacity:1;pointer-events:auto;transform:translateY(0)}
+
+/* ---------- Pantalla de Inicio ---------- */
+#screen0.active{z-index:20}
+.main-title{
+  font-size:clamp(38px,11vw,58px);
+  text-align:center;line-height:1.2;
+  background:linear-gradient(135deg,#c4e0ff,#74b9ff,#0984e3);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:20px;
+  text-shadow:0 0 40px rgba(116,185,255,0.2)
+}
+.subtitle{
+  font-size:17px;color:#a4d0f4;margin-bottom:50px;text-align:center;max-width:300px;line-height:1.7
+}
+.btn{
+  padding:18px 52px;border-radius:999px;border:none;
+  background:linear-gradient(135deg,#1967b3,#42a5f5);
+  color:#fff;font-size:20px;font-weight:600;cursor:pointer;
+  box-shadow:0 10px 35px rgba(66,165,245,0.35);
+  transition:all 0.25s ease
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 15px 45px rgba(66,165,245,0.45)}
+.btn:active{transform:scale(0.96)}
+
+/* ---------- Tarjetas de Mensajes ---------- */
+.message-card{
+  background:rgba(30,80,140,0.35);
+  border:1px solid rgba(120,190,255,0.25);
+  border-radius:28px;
+  padding:38px 30px;
+  max-width:360px;
+  box-shadow:0 12px 45px rgba(0,80,160,0.15);
+  backdrop-filter:blur(12px);
+  margin-bottom:30px
+}
+.message-text{
+  font-size:19px;line-height:1.9;color:#e0edff;text-align:center
+}
+.page-number{
+  color:#7fc8ff;font-size:15px;margin-bottom:20px
+}
+.nav-buttons{
+  display:flex;gap:20px;align-items:center
+}
+.nav-btn{
+  padding:13px 30px;border-radius:999px;border:none;
+  background:rgba(50,130,220,0.35);color:#bfe0ff;font-size:17px;cursor:pointer;
+  transition:all 0.2s ease
+}
+.nav-btn:hover{background:rgba(79,172,254,0.5)}
+.nav-btn:disabled{opacity:0.35;cursor:not-allowed}
+.heart-decor{
+  color:#90caf9;font-size:32px;margin-top:30px
+}
+</style>
+</head>
+
+<body>
+<div class="bg-image"></div>
+
+<!-- PANTALLA 0 — Inicio -->
+<section class="screen active" id="screen0">
+  <h1 class="main-title">Para La Mejor Novia 💙</h1>
+  <p class="subtitle">Tú eres mi lugar favorito en todo el mundo 💙</p>
+  <button class="btn" onclick="goToScreen(1)">Leer 💌</button>
+</section>
+
+<!-- PANTALLA 1 -->
+<section class="screen" id="screen1">
+  <p class="page-number">1 / 5 💙</p>
+  <div class="message-card">
+    <p class="message-text">
+      Mi amor, cada día que paso contigo me doy cuenta de lo afortunado que soy.<br><br>
+      Eres la persona más dulce, hermosa y especial que he conocido 💙
+    </p>
+  </div>
+  <div class="nav-buttons">
+    <button class="nav-btn" onclick="goToScreen(0)">⬅ Atrás</button>
+    <button class="nav-btn" onclick="goToScreen(2)">Siguiente ➡</button>
+  </div>
+</section>
+
+<!-- PANTALLA 2 -->
+<section class="screen" id="screen2">
+  <p class="page-number">2 / 5 💙</p>
+  <div class="message-card">
+    <p class="message-text">
+      Gracias por ser mi compañera, mi alegría y mi paz.<br><br>
+      Gracias por cada risa, cada abrazo y cada momento que compartimos. No cambiaría nada de lo que vivimos juntos 💙
+    </p>
+  </div>
+  <div class="nav-buttons">
+    <button class="nav-btn" onclick="goToScreen(1)">⬅ Atrás</button>
+    <button class="nav-btn" onclick="goToScreen(3)">Siguiente ➡</button>
+  </div>
+</section>
+
+<!-- PANTALLA 3 -->
+<section class="screen" id="screen3">
+  <p class="page-number">3 / 5 💙</p>
+  <div class="message-card">
+    <p class="message-text">
+      Me encanta tu sonrisa, tu forma de ver el mundo y la paz que me das solo con estar a mi lado.<br><br>
+      Eres perfecta para mí, tal y como eres 💙
+    </p>
+  </div>
+  <div class="nav-buttons">
+    <button class="nav-btn" onclick="goToScreen(2)">⬅ Atrás</button>
+    <button class="nav-btn" onclick="goToScreen(4)">Siguiente ➡</button>
+  </div>
+</section>
+
+<!-- PANTALLA 4 -->
+<section class="screen" id="screen4">
+  <p class="page-number">4 / 5 💙</p>
+  <div class="message-card">
+    <p class="message-text">
+      Quiero tomarte de la mano siempre, igual que en esta foto, y caminar contigo por todo lo que nos falta por vivir.<br><br>
+      No importa a dónde vayamos, si es contigo, siempre será mi lugar favorito 💙🤍
+    </p>
+  </div>
+  <div class="nav-buttons">
+    <button class="nav-btn" onclick="goToScreen(3)">⬅ Atrás</button>
+    <button class="nav-btn" onclick="goToScreen(5)">Siguiente ➡</button>
+  </div>
+</section>
+
+<!-- PANTALLA 5 — Final 💙 -->
+<section class="screen" id="screen5">
+  <p class="page-number">5 / 5 💙</p>
+  <div class="message-card">
+    <p class="message-text">
+      Te amo más de lo que las palabras pueden explicar.<br><br>
+      Gracias por ser tú. Eres, eres y siempre serás la mejor novia del mundo.<br><br>
+      <strong>Te amo con todo mi corazón 💙🤍</strong>
+    </p>
+  </div>
+  <div class="nav-buttons">
+    <button class="nav-btn" onclick="goToScreen(4)">⬅ Atrás</button>
+    <button class="nav-btn" onclick="goToScreen(0)">🏠 Inicio</button>
+  </div>
+  <div class="heart-decor">💙🤍💙</div>
+</section>
+
+<script>
+function goToScreen(num){
+  document.querySelectorAll('.screen').forEach(screen=>screen.classList.remove('active'));
+  document.getElementById('screen'+num).classList.add('active');
+}
+</script>
+</body>
+  </html>
+  
